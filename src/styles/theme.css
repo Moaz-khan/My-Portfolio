@@ -1,0 +1,208 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+
+  /* MAAZ.DEV.it Exact Color Palette */
+  --MAAZ.DEV-black: #0A0A0A;
+  --MAAZ.DEV-cream: #FAF9F6;
+  --MAAZ.DEV-gold: #D4AF37;
+  --MAAZ.DEV-red: #D4AF37;
+  --MAAZ.DEV-dark-card: #1A1A1A;
+  --MAAZ.DEV-gray: #6B6B6B;
+
+  /* Light mode (cream background) */
+  --background: #FAF9F6;
+  --foreground: #0A0A0A;
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0A;
+  --card-dark: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0A0A0A;
+  --primary: #0A0A0A;
+  --primary-foreground: #FAF9F6;
+  --secondary: #E5E5E5;
+  --secondary-foreground: #0A0A0A;
+  --muted: #F5F5F5;
+  --muted-foreground: #6B6B6B;
+  --accent: #D4AF37;
+  --accent-foreground: #0A0A0A;
+  --destructive: #D4AF37;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(10, 10, 10, 0.1);
+  --input: transparent;
+  --input-background: rgba(10, 10, 10, 0.05);
+  --ring: rgba(10, 10, 10, 0.2);
+
+  /* MAAZ.DEV-specific */
+  --pill-radius: 50px;
+  --card-radius: 2rem;
+
+  /* Typography scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+  --text-9xl: 8rem;
+  --text-10xl: 10rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  --radius: 2rem;
+}
+
+.dark {
+  /* Dark mode (black background) */
+  --background: #0A0A0A;
+  --foreground: #FAF9F6;
+  --card: #1A1A1A;
+  --card-foreground: #FAF9F6;
+  --card-dark: #0A0A0A;
+  --popover: #1A1A1A;
+  --popover-foreground: #FAF9F6;
+  --primary: #FAF9F6;
+  --primary-foreground: #0A0A0A;
+  --secondary: #2A2A2A;
+  --secondary-foreground: #FAF9F6;
+  --muted: #2A2A2A;
+  --muted-foreground: #6B6B6B;
+  --accent: #D4AF37;
+  --accent-foreground: #0A0A0A;
+  --destructive: #D4AF37;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(250, 249, 246, 0.1);
+  --input: rgba(250, 249, 246, 0.1);
+  --ring: rgba(250, 249, 246, 0.2);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-card-dark: var(--card-dark);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-ring: var(--ring);
+  --color-MAAZ.DEV-black: var(--MAAZ.DEV-black);
+  --color-MAAZ.DEV-cream: var(--MAAZ.DEV-cream);
+  --color-MAAZ.DEV-gold: var(--MAAZ.DEV-gold);
+  --color-MAAZ.DEV-red: var(--MAAZ.DEV-red);
+  --color-MAAZ.DEV-dark-card: var(--MAAZ.DEV-dark-card);
+  --color-MAAZ.DEV-gray: var(--MAAZ.DEV-gray);
+  --radius-pill: var(--pill-radius);
+  --radius-card: var(--card-radius);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  /* MAAZ.DEV.it Typography */
+  h1 {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: var(--text-6xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: var(--text-5xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.3;
+  }
+
+  h4 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.7;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input,
+  textarea {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+
+/* Grain texture overlay for dark backgrounds */
+.grain-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
